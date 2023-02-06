@@ -5,8 +5,8 @@
 
         function __construct($_title, $_price, $_image, $_weight, $_name, $_icona, $_material, $_dimension){
             parent::__construct($_title, $_price, $_image, $_weight, $_name, $_icona);
-            $this->material=$material;
-            $this->dimension=$dimension;
+            $this->material=$_material;
+            $this->dimension=$_dimension;
         }
     }
 ?>
