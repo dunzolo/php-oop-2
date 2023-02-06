@@ -30,17 +30,32 @@
                         </div>                            
                     </div>
                 <?php } ?>
-                <?php foreach($array_accessories as $accessories) { ?>
+                <?php foreach($array_accessories as $accessorie) { ?>
                     <div class="col-4">
                         <div class="card">
-                            <img class="card-img-top" alt="card-image-top" src="<?php echo $accessories->image ?>">
+                            <img class="card-img-top" alt="card-image-top" src="<?php echo $accessorie->image ?>">
                             <div class="card-body">
-                                <h3><?php echo $accessories->title ?></h3>
-                                <p class="card-text"><i class="<?php echo $accessories->icon?>"></i><?php echo $accessories->name?></p>
-                                <p class="card-text"><?php echo "Prezzo: ".$accessories->price ?></p>
-                                <p class="card-text"><?php echo "Peso netto: ".$accessories->weight ?></p>
-                                <p class="card-text"><?php echo "Materiale: ".$accessories->material ?></p>
-                                <p class="card-text"><?php echo "Dimensioni: ".$accessories->dimension ?></p>
+                                <h3><?php echo $accessorie->title ?></h3>
+                                <p class="card-text"><i class="<?php echo $accessorie->icon?>"></i><?php echo $accessorie->name?></p>
+                                <p class="card-text"><?php echo "Prezzo: ".$accessorie->price ?></p>
+                                <p class="card-text"><?php echo "Peso netto: ".$accessorie->weight ?></p>
+                                <p class="card-text"><?php echo "Materiale: ".$accessorie->material ?></p>
+                                <p class="card-text"><?php echo "Dimensioni: ".$accessorie->dimension ?></p>
+                            </div>
+                        </div>                            
+                    </div>
+                <?php } ?>
+                <?php foreach($array_toys as $toy) { ?>
+                    <div class="col-4">
+                        <div class="card">
+                            <img class="card-img-top" alt="card-image-top" src="<?php echo $toy->image ?>">
+                            <div class="card-body">
+                                <h3><?php echo $toy->title ?></h3>
+                                <p class="card-text"><i class="<?php echo $toy->icon?>"></i><?php echo $toy->name?></p>
+                                <p class="card-text"><?php echo "Prezzo: ".$toy->price ?></p>
+                                <p class="card-text"><?php echo "Peso netto: ".$toy->weight ?></p>
+                                <p class="card-text"><?php echo "Caratteristiche: ".$toy->characteristics ?></p>
+                                <p class="card-text"><?php echo "Dimensioni: ".$toy->dimension ?></p>
                             </div>
                         </div>                            
                     </div>
