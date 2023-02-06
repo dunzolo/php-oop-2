@@ -15,10 +15,12 @@
     </head>
     <body>
         <div class="container">
-            <div class="row d-flex">
+            <h1 class="text-center mt-5">Boolshop</h1>
+            <div class="row d-flex mt-5">
+                <h2>I nostri prodotti</h2>
                 <?php foreach($array_foods as $food) { ?>
-                    <div class="col-4">
-                        <div class="card">
+                    <div class="col-4 mb-3">
+                        <div class="card h-100">
                             <img class="card-img-top" alt="card-image-top" src="<?php echo $food->image ?>">
                             <div class="card-body">
                                 <h3><?php echo $food->title ?></h3>
@@ -31,8 +33,8 @@
                     </div>
                 <?php } ?>
                 <?php foreach($array_accessories as $accessorie) { ?>
-                    <div class="col-4">
-                        <div class="card">
+                    <div class="col-4 mb-3">
+                        <div class="card h-100">
                             <img class="card-img-top" alt="card-image-top" src="<?php echo $accessorie->image ?>">
                             <div class="card-body">
                                 <h3><?php echo $accessorie->title ?></h3>
@@ -46,8 +48,8 @@
                     </div>
                 <?php } ?>
                 <?php foreach($array_toys as $toy) { ?>
-                    <div class="col-4">
-                        <div class="card">
+                    <div class="col-4 mb-3">
+                        <div class="card h-100">
                             <img class="card-img-top" alt="card-image-top" src="<?php echo $toy->image ?>">
                             <div class="card-body">
                                 <h3><?php echo $toy->title ?></h3>
