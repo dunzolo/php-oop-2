@@ -30,6 +30,21 @@
                         </div>                            
                     </div>
                 <?php } ?>
+                <?php foreach($array_accessories as $accessories) { ?>
+                    <div class="col-4">
+                        <div class="card">
+                            <img class="card-img-top" alt="card-image-top" src="<?php echo $accessories->image ?>">
+                            <div class="card-body">
+                                <h3><?php echo $accessories->title ?></h3>
+                                <p class="card-text"><i class="<?php echo $accessories->icon?>"></i><?php echo $accessories->name?></p>
+                                <p class="card-text"><?php echo "Prezzo: ".$accessories->price ?></p>
+                                <p class="card-text"><?php echo "Peso netto: ".$accessories->weight ?></p>
+                                <p class="card-text"><?php echo "Materiale: ".$accessories->material ?></p>
+                                <p class="card-text"><?php echo "Dimensioni: ".$accessories->dimension ?></p>
+                            </div>
+                        </div>                            
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </body>
