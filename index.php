@@ -1,6 +1,5 @@
 <?php
     include __DIR__ . '/database.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -14,50 +13,30 @@
         <title>PHP OOP2</title>
     </head>
     <body>
-        <div class="container">
-            <h1 class="text-center mt-5">Boolshop</h1>
+    <div class="container">
+            <h1 class="text-center mt-3">Boolshop</h1>
             <div class="row d-flex mt-5">
                 <h2>I nostri prodotti</h2>
-                <?php foreach($array_foods as $food) { ?>
+                <?php foreach($products as $product) { ?>
                     <div class="col-4 mb-3">
                         <div class="card h-100">
-                            <img class="card-img-top" alt="card-image-top" src="<?php echo $food->image ?>">
+                            <img class="card-img-top p-5" alt="card-image-top" src="<?php echo $product->image ?>">
                             <div class="card-body">
-                                <h3><?php echo $food->title ?></h3>
-                                <p class="card-text"><i class="<?php echo $food->icon?>"></i><?php echo $food->name?></p>
-                                <p class="card-text"><?php echo "Prezzo: ".$food->price ?></p>
-                                <p class="card-text"><?php echo "Peso netto: ".$food->weight ?></p>
-                                <p class="card-text"><?php echo "Peso netto: ".$food->ingredient ?></p>
-                            </div>
-                        </div>                            
-                    </div>
-                <?php } ?>
-                <?php foreach($array_accessories as $accessorie) { ?>
-                    <div class="col-4 mb-3">
-                        <div class="card h-100">
-                            <img class="card-img-top" alt="card-image-top" src="<?php echo $accessorie->image ?>">
-                            <div class="card-body">
-                                <h3><?php echo $accessorie->title ?></h3>
-                                <p class="card-text"><i class="<?php echo $accessorie->icon?>"></i><?php echo $accessorie->name?></p>
-                                <p class="card-text"><?php echo "Prezzo: ".$accessorie->price ?></p>
-                                <p class="card-text"><?php echo "Peso netto: ".$accessorie->weight ?></p>
-                                <p class="card-text"><?php echo "Materiale: ".$accessorie->material ?></p>
-                                <p class="card-text"><?php echo "Dimensioni: ".$accessorie->dimension ?></p>
-                            </div>
-                        </div>                            
-                    </div>
-                <?php } ?>
-                <?php foreach($array_toys as $toy) { ?>
-                    <div class="col-4 mb-3">
-                        <div class="card h-100">
-                            <img class="card-img-top" alt="card-image-top" src="<?php echo $toy->image ?>">
-                            <div class="card-body">
-                                <h3><?php echo $toy->title ?></h3>
-                                <p class="card-text"><i class="<?php echo $toy->icon?>"></i><?php echo $toy->name?></p>
-                                <p class="card-text"><?php echo "Prezzo: ".$toy->price ?></p>
-                                <p class="card-text"><?php echo "Peso netto: ".$toy->weight ?></p>
-                                <p class="card-text"><?php echo "Caratteristiche: ".$toy->characteristics ?></p>
-                                <p class="card-text"><?php echo "Dimensioni: ".$toy->dimension ?></p>
+                                <h3><?php echo $product->title ?></h3>
+                                <p class="card-text"><?php echo $product->animal->icon." ".$product->animal->name; ?></p>
+                                <p class="card-text"><?php echo "Prezzo: €".$product->price; ?></p>
+                                <p class="card-text"><?php echo "Peso netto: ".$product->weight ?></p>
+                                <?php if(get_class($product) == 'Food'){ ?>
+                                    <p class="card-text"><?php echo "Ingredienti: ".implode(", ", $product->ingredient); ?></p>
+                                <?php } ?>
+                                <?php if(get_class($product) == 'Accessory'){ ?>
+                                    <p class="card-text"><?php echo "Materiale: ".$product->material ?></p>
+                                    <p class="card-text"><?php echo "Dimensioni: ".$product->dimension ?></p>
+                                <?php } ?>
+                                <?php if(get_class($product) == 'Toy'){ ?>
+                                    <p class="card-text"><?php echo "Caratteristiche: ".$product->characteristics ?></p>
+                                    <p class="card-text"><?php echo "Dimensioni: ".$product->dimension ?></p>
+                                <?php } ?>
                             </div>
                         </div>                            
                     </div>
